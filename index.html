@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfriEncomendas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="main-extra">
+        <div class="menu">
+            <h1 class="logo">AfriEncomendas</h1>
+              <a href="contacto.html" class="btn-encomendar">Encomendar</a> 
+        </div>
+    </div>
+
+ <div class="main">
+        <section class="inicio">
+        <div class="conteudo">
+            <h2 class="titulo-inicio">Faça a sua encomenda, nós faremos a entrega até você </h2>
+            <p class="inicio-p">
+               Entregas que facilitam o seu dia, receba o que precisa sem gastos elevados.
+            </p>
+        </div>
+
+    <div class="imagem" >
+        <img src="imagem.jpg" alt="entrega">
+    </div>
+    </section>
+
+    <section class="meio">
+        <div class="conteudo-meio">
+            <h2 class="titulo-meio">Pode ter o que quiser com apenas um clique</h2>
+            <p class="meio-p">
+             Escolha o que precisa, faça o seu pedido e deixe o resto connosco. Tudo de forma simples, 
+             rápida e barata até si.
+
+            </p>
+        </div>
+        
+        <div class="imagem">
+            <img src="i.jpg" alt="entrega">
+        </div>
+    </section>
+
+    <section class="sessao">
+    <div class="conteudo">
+        <h2 class="titulo-sessao">Faça o seu pedido e receba onde estiver.</h2>
+        <p class="sessao-p">
+
+        </p>
+    </div>
+
+    </section>
+
+ <!--Imagens dos cards-->
+    <section class="pedidos">
+        <div class="pedidos-track">
+        <div class="card">
+        <div class="card-pedido" data-titulo="Bolos" data-preco="----" data-duracao="30 min" data-img="bolos.jpg">
+            <img src="bolos.jpg" alt="pedido">
+            
+                  <a href="contacto.html?pedido=Bolos" class="btn-card-encomendar">Encomendar</a>
+             </div>  
+        </div>     
+
+          <div class="card"> 
+        <div class="card-pedido" data-titulo="Bolas de Berlin" data-preco="----" data-duracao="30 min" data-img="bolas.jpg">
+            <img src="bolas.jpg" alt="bolinhos">
+              <a href="contacto.html?pedido=Bolos" class="btn-card-encomendar">Encomendar</a>
+          </div>
+          </div>
+
+        <div class="card">
+        <div class="card-pedido" data-titulo="Salgadinhos" data-preco="----" data-duracao="30 min" data-img="salgados.jpg">
+            <img src="salgados.jpg" alt="salgadinhos">
+              <a href="contacto.html?pedido=Bolos" class="btn-card-encomendar">Encomendar</a>
+        </div>
+        </div>
+
+         <div class="card">
+        <div class="card-pedido" data-titulo="Bolinhos" data-preco="----" data-duracao="30 min" data-img="bolinhos.jpg">
+            <img src="bolinhos.jpg" alt="bolinhos">
+              <a href="contacto.html?pedido=Bolos" class="btn-card-encomendar">Encomendar</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-pedido" data-titulo="Risoles" data-preco="----" data-duracao="30 min" data-img="risoles.jpg">
+            <img src="risoles.jpg" alt="Risoles">
+              <a href="contacto.html?pedido=Bolos" class="btn-card-encomendar">Encomendar</a>
+        </div>
+    </div> 
+
+     <div class="card">
+        <div class="card-pedido" data-titulo="Argolas" data-preco="----" data-duracao="30 min" data-img="argolas.jpg">
+            <img src="argolas.jpg" alt="Argolas">
+              <a href="contacto.html?pedido=Bolos" class="btn-card-encomendar">Encomendar</a>
+        </div>
+    </div>    
+
+        </div>
+    </section>
+
+    </div>
+
+    <!-- Modal (fica escondido até clicarem numa imagem) -->
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+        <button class="modal-fechar" id="modalFechar"></button>
+        <img src="" alt="" id="modalImg" class="modal-img">
+        <h3 id="modalTitulo"></h3>
+        <p id="modalPreco"></p>
+        <p id="modalDuracao"></p>
+    </div>
+</div>
+
+    <!--Rodapé da páginas-->
+<section class="fim-pagina">
+    <h3>AfriEncomendas</h3>
+    <div class="colunas">
+    <div class="itens">
+        <h4>Sobre nós</h4>
+        <p> Somos uma empresa faz entrega ao domicilio</p>
+    </div>
+
+    <div class="itens">
+        <h4>Disponibilidade</h4>
+        <p>24/24. <br> 7 Dias por semana</p>
+    </div>
+
+    <div class="itens">
+        <h4>Desevolvimento</h4>
+        <p>Website desenvolvido pela Trentor</p>
+    </div>
+
+    </div> 
+</section>
+</body>
+</html>
