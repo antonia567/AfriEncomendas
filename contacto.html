@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Contacto</title>
+</head>
+<body>
+   <div class="main-extra">
+         <div class="menu">
+             <h1 class="logo">AfriEncomendas</h1>
+         </div>
+   </div>
+
+    <div class="main">
+<form id="menu-formulario">
+<div class="pagina-formulario">
+ <div class="formulario">
+    <h2 class="titulo-formulario">Faça o seu pedido</h2>
+
+    <label for="nome">Nome e Sobrenome</label>
+    <input type="text" id="nome" placeholder="Digite seu nome e sobrenome">
+     <span class="erro" id="erroNome"></span>
+
+    <label for="numero">Número de telemóvel</label>
+    <input type="tel" id="numero" placeholder="Digete o número de telemóvel">
+    <span class="erro" id="erroNumero"></span>
+
+     <label for="pedido">Pedido</label>
+    <select id="inputPedido" name="detalheProduto">
+    <option value="" disabled selected>Selecione uma opção</option>
+  </select>
+  <span class="erro"  id="erroPedido"></span>
+
+    <label for="quantidade">Preço</label>
+    <select id="inputPreco" name="preco">
+   <option value="" disabled selected>Selecione o valor</option>
+    </select>
+    <span class="erro" id="erroPreco"></span>
+
+    <label for="endereco">Endereço</label>
+    <input type="text" id="endereco" placeholder="Digite o seu endereço">
+    <span class="erro" id="erroEndereco"></span>
+
+         <button  type="submit"  id="btnEnviar" class="btn-enviar">Enviar</button>
+   </div>
+</div>
+</form>
+    </div>
+
+  <!-- Rodapé das páginas-->
+  <section class="fim-pagina">
+    <h3>AfriEncomendas</h3>
+    <div class="colunas">
+    <div class="itens">
+        <h4>Sobre nós</h4>
+        <p>Somos uma empresa que faz entrega ao domicilio</p>
+    </div>
+
+    <div class="itens">
+        <h4>Disponibilidade</h4>
+        <p>24/24. <br> 7 Dias por semana</p>
+    </div>
+
+     <div class="itens">
+        <h4>Desevolvimento</h4>
+        <p>Website desenvolvido pela Trentor</p>
+    </div>
+
+    </div> 
+</section>
+
+</body>
+</html>
