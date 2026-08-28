@@ -162,9 +162,9 @@ img {
 
 .hero-image img,
 .feature-image img {
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
     border-radius: 26px;
+   aspect-ratio: 4 / 5;
+    object-fit: fill;
     box-shadow: 0 24px 50px rgba(20, 16, 31, 0.16);
 }
 
