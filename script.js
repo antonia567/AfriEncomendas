@@ -39,7 +39,7 @@ for (let i = preco; i <= limite; i += 100) {
 document.getElementById("inputPreco").innerHTML += html;
 
  //Opções do select pedido
-var opcoes = ["Bolos", "Bolas de Berlin", "Bolinhos", "Salgadinhos recheado de salsicha ", "Salgadinhos recheado de peixe", "Salgadinhos recheado de frango", "Rissóis"];
+var opcoes = ["Bolos", "Bolas de Berlin", "Bolinhos", "Salgadinhos recheados de salsicha ", "Salgadinhos recheados de peixe", "Salgadinhos recheados de frango", "Rissóis"];
 var html = "";
 
 for (let i = 0; i < opcoes.length; i++) {
