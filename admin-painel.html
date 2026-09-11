@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js" defer></script>
+    <title>Painel Administrativo | AfriEncomendas</title>
+</head>
+<body>
+    <header class="main-extra">
+        <nav class="menu" aria-label="Menu principal">
+            <h1 class="logo">AfriEncomendas</h1>
+            <button id="btnLogout" class="btn-encomendar">Sair</button>
+        </nav>
+    </header>
+
+    <main class="main">
+        <h2>Painel Administrativo</h2>
+          <p id="statusLogin"></p>
+
+          <h3>Pedidos Recebidos</h3>
+<div class="tabela-scroll">
+    <table class="tabela-pedidos">
+        <thead>
+            <tr>
+                <th>Cliente</th>
+                <th>Telefone</th>
+                <th>Pedido</th>
+                <th>Quantidade</th>
+                <th>Preço Total</th>
+                <th>Endereço</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="lista-pedidos">
+            <!-- Preenchido automaticamente -->
+        </tbody>
+    </table>
+
+    </main>
+</body>
+</html>

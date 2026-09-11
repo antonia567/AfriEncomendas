@@ -1,37 +1,38 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js" defer></script>
-    <title>AfriEncomendas</title>
+    <title>Sapatos | AfriEncomedas</title>
 </head>
 <body>
-    <header class="main-extra">
+    
+ <header class="main-extra">
         <nav class="menu" aria-label="Menu principal">
             <h1 class="logo">AfriEncomendas</h1>
             <a href="contacto.html" class="btn-encomendar">Encomendar</a>
         </nav>
     </header>
 
-        <!--Todos os itens do main-->
     <main class="main">
-
-        <form class="form-busca" autocomplete="off">
-         <input  type="search" id="caixa-busca" name="pesquisa" class="input-busca" placeholder="Digite o que procura..." >
-        <button type="submit" class="btn-busca">
-              <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-         <div id="resultados-busca" class="resultados-busca"></div>
-      </form>
-    
-
-    <div class="categorias-grid" id="categorias-grid">
-
+         <section class="feature">
+            <div class="conteudo-meio">
+                <span class="eyebrow">Sapatos</span>
+                <h2 class="titulo-meio">Cada passo, seu estilo</h2>
+                <p class="meio-p">
+                Encontre calçados que unem conforto, personalidade e elegância para todos os momentos.
+                </p>
+            </div>
+        </section>
+        
+        <section class="pedidos" aria-label="Produtos em destaque">
+    <div class="pedidos-grid" id="produtos-grid">
+        <!-- Preenchido automaticamente via Supabase -->
     </div>
+</section>
 
   </main>
 
@@ -53,7 +54,7 @@
                 <p>Website desenvolvido pela Trentor.</p>
             </div>
 
-      <div class="itens">
+             <div class="itens">
           <h4>Termos e Condições</h4>
         <p> <a href="termosUso.html">Termos de Uso <br> Política de Privacidade</a></p>
         </div>
@@ -66,8 +67,15 @@
             <p> 
             </p>
         </div>
-        
-     </div>
-  </footer>
+
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        carregarProdutos("Sapatos");
+    });
+</script>
+
 </body>
 </html>

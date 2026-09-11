@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js" defer></script>
     <title>Contacto</title>
 </head>
@@ -28,17 +29,24 @@
     <input type="tel" id="numero" placeholder="Digete o número de telemóvel">
     <span class="erro" id="erroNumero"></span>
 
+      <label for="pedido">Categoria</label>
+    <select id="inputCategoria" name="detalheCategoria">
+    <option value="" disabled selected>Selecione uma opção</option>
+  </select>
+  <span class="erro"  id="erroCategoria"></span>
+
      <label for="pedido">Pedido</label>
     <select id="inputPedido" name="detalheProduto">
     <option value="" disabled selected>Selecione uma opção</option>
   </select>
   <span class="erro"  id="erroPedido"></span>
 
-    <label for="quantidade">Preço</label>
-    <select id="inputPreco" name="preco">
-   <option value="" disabled selected>Selecione o valor</option>
-    </select>
-    <span class="erro" id="erroPreco"></span>
+ <label for="quantidades">Quantidade do pedido</label>
+    <input type="number" id="quantidades" placeholder="Digete a quantidade">
+    <span class="erro" id="erroQuantidade"></span>  
+
+   <label for="preco">Preço do pedido</label>
+    <input type="text" id="inputPreco" name="preco" placeholder="Selecione o pedido e a quantidade" readonly>
 
     <label for="endereco">Endereço</label>
     <input type="text" id="endereco" placeholder="Digite o seu endereço">
@@ -69,7 +77,21 @@
         <p>Website desenvolvido pela Trentor</p>
     </div>
 
-    </div> 
+ <div class="itens">
+          <h4>Termos e Condições</h4>
+        <p> <a href="termosUso.html">Termos de Uso <br> Política de Privacidade</a></p>
+        </div>
+
+      
+         <p class="itens">© 2026 AfriEncomendas. Todos os direitos reservados.</p>
+
+    <div class="itens">
+          <h4>Nossas Redes Sociais</h4>
+            <p> 
+            </p>
+        </div>
+        
+    </div>
 </section>
 
 </body>
