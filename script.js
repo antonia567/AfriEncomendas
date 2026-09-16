@@ -21,11 +21,11 @@ var precosPorItem = {
     "Paracetamol 500mg": 300, "Ibuprofeno 200mg": 800,
     "Vitamina C 500mg": 300, "Aspirina BP 100mg": 300,
     "Ácido Fólico BP 5mg": 100,
-    "Perfume YARA": 7000, "perfume ASAD": 7000, "perfume MAYAR": 3500, "perfume KHAMRAH": 3500, "perfume ANDALEEB": 5000, 
-    "perfume JUA PAUL": 18000, "Perfume MILITION": 5000, "Perfume MATELOT": 14000, "perfume INTENSE MAN": 15000, 
-    "perfume ONIRO": 16000, "perfume INTENSE NOIR": 18000, "perfume CLUB DE NUIT": 17000,
+    "Perfume YARA": 7000, "Perfume ASAD": 7000, "Perfume MAYAR": 3500, "Perfume KHAMRAH": 3500, "Perfume ANDALEEB": 5000, 
+    "Perfume JUAN PAUL": 18000, "Perfume MILITION": 5000, "Perfume MATELOT": 14000, "Perfume INTENSE MAN": 15000, 
+    "Perfume ONIRO": 16000, "Perfume INTENSE NOIR": 18000, "Perfume CLUB DE NUIT": 17000,
     "Sapato Boss": 25000, "Tênis Lacoste":25000, "Tênis Puma": 25000,
-    "Tênis Puma": 25000, "Chinelas PRADA": 18000, "Sandálias BOSS": 18000
+    "Tênis Puma": 25000, "Chinelas PRADA": 18000, "Sandálias BOSS": 18000,
 };
 
 function calcularPreco() {
@@ -56,9 +56,9 @@ var itensPorCategoria = {
 
     "Medicamentos": ["Paracetamol 500mg", "Ibuprofeno 200mg" ,"Vitamina C 500mg","Aspirina BP 100mg","Ácido Fólico BP 5mg"],
 
-    "Cosméticos": ["Perfume YARA", "perfume ASAD", "perfume MAYAR", "perfume KHAMRAH", "perfume ANDALEEB", "perfume JUA PAUL",
-        "Perfume MILITION", "Perfume MATELOT", "perfume INTENSE MAN", "perfume ONIRO", "perfume INTENSE NOIR",
-        "perfume CLUB DE NUIT"],
+    "Cosméticos": ["Perfume YARA", "Perfume ASAD", "Perfume MAYAR", "Perfume KHAMRAH", "Perfume ANDALEEB", "Perfume JUAN PAUL",
+        "Perfume MILITION", "Perfume MATELOT", "Perfume INTENSE MAN", "Perfume ONIRO", "Perfume INTENSE NOIR",
+        "Perfume CLUB DE NUIT"],
 
     "Sapatos" : ["Sapato Boss", "Tênis Lacoste", "Tênis Puma", "Chinelas PRADA", "Sandálias BOSS"]
 };
