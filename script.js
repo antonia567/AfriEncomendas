@@ -14,15 +14,18 @@ var precosPorItem = {
     "Salgadinho Recheado de Frango": 200,
     "Rissóis": 250, "Argolas": 100,
     "Hambúrguer Simples": 2500, "Hambúrguer Composto": 3500,
-     "Cachorro-quente": 300, "Sandes": 1000,
-    "Camisa Zegna": 13000, "camisa":13000,
+    "Cachorro-quente": 2500, "Sandes": 1000, "Magoga": 2000,
+    "Camisa Zegna": 13000,
     "Camisa Casa Blanca": 13000,
      "Calças": 20000, "Calções": 15000,
     "Paracetamol 500mg": 300, "Ibuprofeno 200mg": 800,
     "Vitamina C 500mg": 300, "Aspirina BP 100mg": 300,
     "Ácido Fólico BP 5mg": 100,
-    "Creme Nivea": 3000, "Perfume": 2500,
-    "Gel de Cabelo": 1000, "Boss": 25000
+    "Perfume YARA": 7000, "perfume ASAD": 7000, "perfume MAYAR": 3500, "perfume KHAMRAH": 3500, "perfume ANDALEEB": 5000, 
+    "perfume JUA PAUL": 18000, "Perfume MILITION": 5000, "Perfume MATELOT": 14000, "perfume INTENSE MAN": 15000, 
+    "perfume ONIRO": 16000, "perfume INTENSE NOIR": 18000, "perfume CLUB DE NUIT": 17000,
+    "Sapato Boss": 25000, "Tênis Lacoste":25000, "Tênis Puma": 25000,
+    "Tênis Puma": 25000, "Chinelas PRADA": 18000, "Sandálias BOSS": 18000
 };
 
 function calcularPreco() {
@@ -46,11 +49,17 @@ document.getElementById("quantidades")?.addEventListener("input", calcularPreco)
 var itensPorCategoria = {
     "Doces": ["Bolo de Chocolate",  "Bolo Normal", "Bolas de Berlin", "Bolinhos", "Argolas", "Salgadinho Recheado de Salsicha", 
         "Salgadinho Recheado de Peixe", "Salgadinho Recheado de Frango", "Rissóis"],
-    "Comidas Rápidas": ["Hambúrguer Simples", "Hambúrguer Composto", "Cachorro-quente", "Sandes"],
+
+    "Comidas Rápidas": ["Hambúrguer Simples", "Hambúrguer Composto", "Cachorro-quente", "Sandes", "Magoga"],
+
     "Roupas": ["Camisa Zegna", "Camisa Casa Blanca", "Calças", "Calções"],
+
     "Medicamentos": ["Paracetamol 500mg", "Ibuprofeno 200mg" ,"Vitamina C 500mg","Aspirina BP 100mg","Ácido Fólico BP 5mg"],
-    "Cosméticos": ["Creme Nivea", "Perfume", "Gel de Cabelo"],
-    "Sapatos" : ["Boss" ]
+
+    "Cosméticos": ["Perfume YARA", "perfume ASAD", "perfume MAYAR", "perfume KHAMRAH", "perfume ANDALEEB", "perfume JUA PAUL",
+        "Perfume MILITION", "Perfume MATELOT", "perfume INTENSE MAN", "perfume ONIRO", "perfume INTENSE NOIR",
+        "perfume CLUB DE NUIT"],
+    "Sapatos" : ["Sapato Boss", "Tênis Lacoste", "Tênis Puma", "Chinelas PRADA", "Sandálias BOSS"]
 };
 
 function preencherPedidos(categoria) {
@@ -205,6 +214,7 @@ document.getElementById("btnEnviar")?.addEventListener("click", async function (
     { nome: "Rissóis", categoria: "Doces", link: "doces.html" },
     { nome: "Hambúrguer", categoria: "Comidas Rápidas", link: "comidasRapidas.html" },
     { nome: "Cachorro-quente", categoria: "Comidas Rápidas", link: "comidasRapidas.html" },
+    { nome: "comida", categoria: "Comidas Rápidas", link: "comidasRapidas.html"},
     { nome: "Sandes", categoria: "Comidas Rápidas", link: "comidasRapidas.html" },
     { nome: "Camisa Zegna", categoria: "Roupas", link: "roupas.html" },
     { nome: "Camisa", categoria: "Roupas",link: "roupas.html"},
@@ -217,7 +227,6 @@ document.getElementById("btnEnviar")?.addEventListener("click", async function (
     { nome: "Acido Fólico", categoria: "Medicamentos", link: "medicamentos.html"},
     { nome: "Aspirina", categoria: "Medicamentos", link: "medicamentos.html"},
     { nome: "Vitamina C", categoria: "Medicamentos", link: "medicamentos.html"},
-    { nome: "Creme Nivea", categoria: "Cosméticos", link: "cosmeticos.html" },
     { nome: "Perfume", categoria: "Cosméticos", link: "cosmeticos.html" },
     { nome: "Gel de Cabelo", categoria: "Cosméticos", link: "cosmeticos.html" }, 
     { nome: "Nike", categoria: "Sapatos", link: "sapatos.html" },
@@ -573,7 +582,7 @@ document.getElementById("btnEntrar")?.addEventListener("click", async function (
     });
 
     if (error) {
-        erroSenha.textContent = "Email ou senha incorretos. ";
+        erroSenha.textContent = "Email ou senha incorretos. Não cadastro ";
         console.error("Erro de login:", error);
         return;
     }
