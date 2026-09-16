@@ -59,6 +59,7 @@ var itensPorCategoria = {
     "Cosméticos": ["Perfume YARA", "perfume ASAD", "perfume MAYAR", "perfume KHAMRAH", "perfume ANDALEEB", "perfume JUA PAUL",
         "Perfume MILITION", "Perfume MATELOT", "perfume INTENSE MAN", "perfume ONIRO", "perfume INTENSE NOIR",
         "perfume CLUB DE NUIT"],
+
     "Sapatos" : ["Sapato Boss", "Tênis Lacoste", "Tênis Puma", "Chinelas PRADA", "Sandálias BOSS"]
 };
 
