@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+     <script src="script.js" defer></script>
+    <title>Login | AfriEncomendas</title>
+</head>
+<body>
+    
+<div class="main-extra">
+         <div class="menu">
+             <h1 class="logo">AfriEncomendas</h1>
+         </div>
+   </div>
+    
+<form id="menu-formulario">
+<div class="pagina-formulario">
+ <div class="formulario">
+    <h2 class="titulo-formulario">Entrar</h2>
+
+    <label for="emailLogin">Email</label>
+    <input type="email" id="emailLogin" placeholder="Digite seu Email">
+    <span class="erro" id="erroEmailLogin"></span>
+
+    <label for="senhaLogin">Senha</label>
+    <div class="campo-senha">
+    <input type="password" id="senhaLogin" placeholder="Digite sua senha">
+     <i class="fa-solid fa-eye toggle-senha" data-target="senhaLogin"></i>
+    </div>
+    <span class="erro" id="erroSenhaLogin"></span>
+
+         <button  type="button"  id="btnEntrar" class="btn-enviar">Entrar</button>
+         </div>
+     </div>
+</form>
+
+</body>
+</html>

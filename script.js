@@ -22,16 +22,17 @@ var precosPorItem = {
     "Vitamina C 500mg": 300, "Aspirina BP 100mg": 300,
     "Ácido Fólico BP 5mg": 100,
     "Creme Nivea": 3000, "Perfume": 2500,
-    "Gel de Cabelo": 1000, "Nike": 20000
+    "Gel de Cabelo": 1000, "Boss": 25000
 };
 
 function calcularPreco() {
+    var taxa = 300;
     var pedido = document.getElementById("inputPedido").value;
     var quantidade = parseFloat(document.getElementById("quantidades").value);
     var campoPreco = document.getElementById("inputPreco");
 
     if (pedido && precosPorItem[pedido] && quantidade > 0) {
-        var total = precosPorItem[pedido] * quantidade;
+        var total = precosPorItem[pedido] * quantidade + taxa;
         campoPreco.value = total + " Kz";
     } else {
         campoPreco.value = "";
@@ -49,7 +50,7 @@ var itensPorCategoria = {
     "Roupas": ["Camisa Zegna", "Camisa Casa Blanca", "Calças", "Calções"],
     "Medicamentos": ["Paracetamol 500mg", "Ibuprofeno 200mg" ,"Vitamina C 500mg","Aspirina BP 100mg","Ácido Fólico BP 5mg"],
     "Cosméticos": ["Creme Nivea", "Perfume", "Gel de Cabelo"],
-    "Sapatos" : ["Nike" ]
+    "Sapatos" : ["Boss" ]
 };
 
 function preencherPedidos(categoria) {
@@ -107,8 +108,9 @@ document.getElementById("btnEnviar")?.addEventListener("click", async function (
         ["inputCategoria", "erroCategoria", "Selecione uma categoria."],
         ["quantidades", "erroQuantidade","Digite a quantidade"],
         ["inputPedido", "erroPedido", "Selecione um pedido."],
-        ["endereco", "erroEndereco", "Digite o seu endereço."]
-    ];
+        ["endereco", "erroEndereco", "Digite o seu endereço."],
+        ["inputPreco", "erroPreco", "A quantidade não pode ser negativa"]
+  ];
 
     campos.forEach(function ([idCampo, idErro, mensagem]) {
         var campo = document.getElementById(idCampo);
@@ -125,6 +127,7 @@ document.getElementById("btnEnviar")?.addEventListener("click", async function (
     });
 
     if (valido) {
+         console.log("Entrou no bloco de envio!");
         // Pega os valores preenchidos
         var nome = document.getElementById("nome").value;
         var numero = document.getElementById("numero").value;
@@ -133,9 +136,10 @@ document.getElementById("btnEnviar")?.addEventListener("click", async function (
         var quantidades = document.getElementById("quantidades").value;
         var preco = document.getElementById("inputPreco").value;
         var endereco = document.getElementById("endereco").value;
+        var precoNumerico = parseFloat(preco.replace(/[^\d.,]/g, "").replace(",", "."));
+        console.log("Valor do campo preco (texto):", preco);
+        console.log("Valor convertido (precoNumerico):", precoNumerico);
 
-               // Remove " Kz" do preço para salvar só o número no banco
-        var precoNumerico = parseFloat(preco.replace("").replace(/\./g, ""));
 
         // Busca o id do produto pelo nome selecionado
         var { data: produtoEncontrado, error: erroBuscaProduto } = await supabaseClient
@@ -160,7 +164,8 @@ document.getElementById("btnEnviar")?.addEventListener("click", async function (
         });
 
         if (erroPedido) {
-            console.error("Erro ao salvar pedido no banco:", erroPedido);
+    console.error("Erro ao salvar pedido no banco:", JSON.stringify(erroPedido, null, 2));
+
             // Mesmo com erro ao salvar, continuamos enviando pro WhatsApp
         }
     
@@ -186,7 +191,7 @@ document.getElementById("btnEnviar")?.addEventListener("click", async function (
     }   
 });
 
- //==========Mecanismo de Busca==========
+ //==========Mecanismo de Busca==========//
 
  var todosProdutos = [
     { nome: "Bolo Normal", categoria: "Doces", link: "doces.html" },
@@ -202,19 +207,22 @@ document.getElementById("btnEnviar")?.addEventListener("click", async function (
     { nome: "Cachorro-quente", categoria: "Comidas Rápidas", link: "comidasRapidas.html" },
     { nome: "Sandes", categoria: "Comidas Rápidas", link: "comidasRapidas.html" },
     { nome: "Camisa Zegna", categoria: "Roupas", link: "roupas.html" },
-    {nome: "Camisa", categoria: "Roupas",link: "roupas.html"},
-    {nome: "Camisa Casa Blanca", categoria: "Roupas", link: "roupas.html"},
+    { nome: "Camisa", categoria: "Roupas",link: "roupas.html"},
+    { nome: "Camisa Casa Blanca", categoria: "Roupas", link: "roupas.html"},
     { nome: "Calças", categoria: "Roupas", link: "roupas.html" },
     { nome: "Calções", categoria: "Roupas", link: "roupas.html" },
     { nome: "Paracetamol", categoria: "Medicamentos", link: "medicamentos.html" },
     { nome: "Ibuprofeno", categoria: "Medicamentos", link: "medicamentos.html" },
-    {nome: "Acido Fólico", categoria: "Medicamentos", link: "medicamentos.html"},
-    {nome: "Aspirina", categoria: "Medicamentos", link: "medicamentos.html"},
-    {nome: "Vitamina C", categoria: "Medicamentos", link: "medicamentos.html"},
+    { nome: "Medicamento", catrgoria: "Medimentos", link: "medicamentos.html"},
+    { nome: "Acido Fólico", categoria: "Medicamentos", link: "medicamentos.html"},
+    { nome: "Aspirina", categoria: "Medicamentos", link: "medicamentos.html"},
+    { nome: "Vitamina C", categoria: "Medicamentos", link: "medicamentos.html"},
     { nome: "Creme Nivea", categoria: "Cosméticos", link: "cosmeticos.html" },
     { nome: "Perfume", categoria: "Cosméticos", link: "cosmeticos.html" },
     { nome: "Gel de Cabelo", categoria: "Cosméticos", link: "cosmeticos.html" }, 
-    { nome: "Nike", categoria: "Sapatos", link: "sapatos.html"}
+    { nome: "Nike", categoria: "Sapatos", link: "sapatos.html" },
+    { nome: "Chinela", cateria: "Sapatos", link: "sapatos.html" },
+    { nome: "sapato", categoria: "Sapatos", link: "sapatos.html"}
 ];
 
 var inputBusca = document.getElementById("caixa-busca");
@@ -256,8 +264,7 @@ if (inputBusca && caixaResultados) {
     });
 }
 
-
-// ---- Carregar categorias na página inicial ----
+// === Carregar categorias na página inicial ===
 async function carregarCategorias() {
     const container = document.getElementById("categorias-grid");
     if (!container) return;
@@ -300,7 +307,7 @@ container.innerHTML = categorias.map(function (cat) {
 carregarCategorias();
 
 
-// ---- Carregar produtos de uma categoria específica ----
+// === Carregar produtos de uma categoria específica ===
 async function carregarProdutos(nomeCategoria) {
     const container = document.getElementById("produtos-grid");
     if (!container) return;
@@ -346,7 +353,7 @@ async function carregarProdutos(nomeCategoria) {
 }
 
 
-// ---- Login de administrador ----
+// === Login de administrador === //
 document.getElementById("btnLoginAdmin")?.addEventListener("click", async function () {
     var email = document.getElementById("adminEmail").value.trim();
     var senha = document.getElementById("adminSenha").value.trim();
@@ -399,13 +406,13 @@ async function verificarLoginAdmin() {
 
 verificarLoginAdmin();
 
-// ---- Botão de sair (logout) ----
+//=== Botão de sair (logout) ===
 document.getElementById("btnLogout")?.addEventListener("click", async function () {
     await supabaseClient.auth.signOut();
     window.location.href = "admin-login.html";
 });
 
-// ---- Carregar pedidos no painel administrativo ----
+// === Carregar pedidos no painel administrativo ===
 async function carregarPedidos() {
     const container = document.getElementById("lista-pedidos");
     if (!container) return;
@@ -443,3 +450,169 @@ async function carregarPedidos() {
 }
 
 carregarPedidos();
+
+//========== Cadastro de cliente ==========//
+
+document.getElementById("btn-cadastrar")?.addEventListener("click", async function (e) {
+    e.preventDefault();
+
+    var valido = true;
+
+    var campos = [
+        ["nomeCadastro", "erroNomeCadastro", "Digite seu nome e sobrenome."],
+        ["numeroCadastro", "erroNumeroCadastro", "Digite seu número de telemóvel."],
+        ["enderecoCadastro", "erroEnderecoCadastro", "Digite seu endereço."],
+        ["emailCadastro", "erroEmailCadastro", "Digite seu email."],
+        ["senhaCadastro", "erroSenhaCadastro", "Digite uma senha."],
+        ["confirmarSenhaCadastro", "erroConfSenhaCadastro", "Confirme sua senha."]
+    ];
+
+    campos.forEach(function ([idCampo, idErro, mensagem]) {
+        var campo = document.getElementById(idCampo);
+        var erro = document.getElementById(idErro);
+
+        if (campo.value.trim() === "") {
+            erro.textContent = mensagem;
+            campo.classList.add("campo-invalido");
+            valido = false;
+        } else {
+            erro.textContent = "";
+            campo.classList.remove("campo-invalido");
+        }
+    });
+
+    var senha = document.getElementById("senhaCadastro").value;
+    var confirmarSenha = document.getElementById("confirmarSenhaCadastro").value;
+    var erroConfSenha = document.getElementById("erroConfSenhaCadastro");
+
+    if (senha && confirmarSenha && senha !== confirmarSenha) {
+        erroConfSenha.textContent = "As senhas não coincidem.";
+        document.getElementById("confirmarSenhaCadastro").classList.add("campo-invalido");
+        valido = false;
+    }
+
+    if (!valido) return;
+
+    var nome = document.getElementById("nomeCadastro").value;
+    var numero = document.getElementById("numeroCadastro").value;
+    var email = document.getElementById("emailCadastro").value;
+    var endereco = document.getElementById("enderecoCadastro").value;
+
+    //  Cria a conta de autenticação (email + senha)
+    const { data, error } = await supabaseClient.auth.signUp({
+        email: email,
+        password: senha
+    });
+
+    if (error) {
+        alert("Erro ao criar conta: " + error.message);
+        console.error("Erro no cadastro:", error);
+        return;
+    }
+
+    var userId = data.user.id;
+
+    // Insere os dados extras na tabela clientes, usando o mesmo id
+    const { error: erroCliente } = await supabaseClient.from("clientes").insert({
+        id: userId,
+        nome: nome,
+        numero: numero,
+        endereco: endereco, 
+    });
+
+    if (erroCliente) {
+        console.error("Erro ao salvar dados do cliente:", erroCliente);
+        alert("Conta criada, mas houve um erro ao salvar seus dados. Contacte o suporte.");
+        return;
+    }
+
+    alert("Cadastro realizado com sucesso!");
+    window.location.href = "index.html"; // ou para onde fizer sentido redirecionar
+});
+
+ //=== Mostrar/ocultar senha ===
+document.querySelectorAll(".toggle-senha").forEach(function (icone) {
+    icone.addEventListener("click", function () {
+        var input = document.getElementById(this.dataset.target);
+        if (input.type === "password") {
+            input.type = "text";
+            this.classList.remove("fa-eye");
+            this.classList.add("fa-eye-slash");
+        } else {
+            input.type = "password";
+            this.classList.remove("fa-eye-slash");
+            this.classList.add("fa-eye");
+        }
+    });
+});
+
+//==========Login do cliente==========//
+document.getElementById("btnEntrar")?.addEventListener("click", async function (e) {
+    e.preventDefault();
+
+    var email = document.getElementById("emailLogin").value.trim();
+    var senha = document.getElementById("senhaLogin").value.trim();
+    var erroEmail = document.getElementById("erroEmailLogin");
+    var erroSenha = document.getElementById("erroSenhaLogin");
+
+    erroEmail.textContent = "";
+    erroSenha.textContent = "";
+
+    if (!email) {
+        erroEmail.textContent = "Digite seu email.";
+        return;
+    }
+    if (!senha) {
+        erroSenha.textContent = "Digite sua senha.";
+        return;
+    }
+
+    const { data, error } = await supabaseClient.auth.signInWithPassword({
+        email: email,
+        password: senha
+    });
+
+    if (error) {
+        erroSenha.textContent = "Email ou senha incorretos. ";
+        console.error("Erro de login:", error);
+        return;
+    }
+
+    // Redireciona para onde o cliente estava tentando ir
+    window.location.href = "contacto.html";
+});
+
+
+// === Verificar login e preencher dados do cliente em contacto.html ===//
+async function verificarClienteLogado() {
+    var campoNome = document.getElementById("nome");
+    if (!campoNome) return; // só roda em contacto.html
+
+    const { data: { session } } = await supabaseClient.auth.getSession();
+
+    if (!session) {
+        // Não está logado, manda para o login
+        window.location.href = "login.html";
+        return;
+    }
+
+    // Busca os dados do cliente na tabela clientes
+    const { data: cliente, error } = await supabaseClient
+        .from("clientes")
+        .select("*")
+        .eq("id", session.user.id)
+        .single();
+
+    if (error || !cliente) {
+        console.error("Erro ao buscar dados do cliente:", error);
+        return;
+    }
+
+    // Preenche os campos automaticamente
+    document.getElementById("nome").value = cliente.nome;
+    document.getElementById("numero").value = cliente.numero;
+    document.getElementById("endereco").value = cliente.endereco;
+}
+
+verificarClienteLogado();
+

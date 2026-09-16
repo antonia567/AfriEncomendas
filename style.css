@@ -56,6 +56,12 @@ img {
     letter-spacing: 0.04em;
 }
 
+.cadastrar{
+    font-size: 20px ;
+    color: #fff;
+    font-weight: 600;
+}
+
 /* ==========Formulário de busca========== */
 .form-busca {
     display: flex;
@@ -331,6 +337,7 @@ input-busca::placeholder {
     font-size:  15px;
     color: #5A0891;
     font-family: Arial;
+    margin-top: -5px;
 }
 
 .card-pagina i {
@@ -478,6 +485,25 @@ input-busca::placeholder {
     box-shadow: 0 0 0 3px rgba(122, 62, 243, 0.12);
 }
 
+/*===Ícone do olho===*/
+.campo-senha {
+    position: relative;
+}
+
+.campo-senha input{
+    width: 100%;
+    padding-right: 40px;
+}
+
+.toggle-senha {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    cursor: pointer;
+}
+
 .btn-enviar {
     width: 100%;
     padding: 14px 18px;
@@ -499,6 +525,17 @@ input-busca::placeholder {
     color: #d62828;
     font-size: 0.8rem;
     min-height: 1em;
+}
+
+.span{
+    font-size: 15px;
+    text-align: center;
+    min-width: none;
+    font-family: Arial;
+}
+
+.span-cad{
+    color:#4c1d95;
 }
 
 .formulario input.campo-invalido,
@@ -635,6 +672,18 @@ input-busca::placeholder {
 .texto-termo a:hover {
     text-decoration: underline;
 }
+
+/*==========Ícones das redes sociais==========*/
+.social-icons a {
+  font-size: 28px;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #0aa061;
+} 
+
 /*==========Tabela do Painel de Administrador==========*/
 .tabela-scroll {
     width: 100%;
@@ -760,8 +809,8 @@ input-busca::placeholder {
         gap: 16px;
     }
 
-.texto-categoria {
-    font-size: 10px;
+    .texto-categoria {
+         font-size: 10px;
 }
       
     .card-pedido {
@@ -779,6 +828,27 @@ input-busca::placeholder {
       .btn-card-encomendar {
         font-size: 0.72rem;
         padding: 8px 14px;
+    }
+
+    fim-pagina {
+        padding: 40px 16px 48px;
+    }
+
+    .fim-pagina h3 {
+        font-size: 1.2rem;
+        margin-bottom: 24px;
+    }
+
+    .colunas {
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+    }
+
+    .itens {
+        max-width: 100%;
+        width: 100%;
+        text-align: center;
     }
 }
 
@@ -843,6 +913,18 @@ input-busca::placeholder {
 
     .fim-pagina {
         padding: 48px 18px 56px;
+    }
+
+    .span{
+        font-size: 13px;
+    }
+
+      .itens {
+        font-size: 0.9rem;
+    }
+
+    .itens h4 {
+        font-size: 0.95rem;
     }
 }
 
