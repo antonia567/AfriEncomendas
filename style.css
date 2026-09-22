@@ -283,7 +283,7 @@ input-busca::placeholder {
     color:  #ff0000;
     font-size: 1.01rem;
     line-height: 1.5;
-
+    font-weight: 900;
   }
 
  /*========== Cards da Página inicial ==========*/
